@@ -6,15 +6,90 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>Page Title</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel="icon" type="image/png" href="assets/img/favicon/favicon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon/favicon.png" sizes="32x32">
   <link rel='stylesheet' type='text/css' href='assets/css/plugins.min.css'>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
   <link rel='stylesheet' type='text/css' href='assets/css/app.min.css'>
 </head>
 
 <body>
+  <header>
+    <h1>Location Finder</h1>
 
-  <h1>Location Finder</h1>
+    <img src="assets/img/favicon/favicon.png">
+  </header>
+  <div class="location-finder">
+    <div class="location-finder__header">
+      <div class="data-categories">
+        <!-- <div class="data-categories__item active">grocery</div> -->
+      </div>
+    </div>
+    <div class="location-finder__content">
+      <div class="data">
+        <div class="data-list">
+          <div class="data-list__item">
+            <div class="store">
+              <div class="store-image">
+                <img src="assets/img/store/store.jpg">
+              </div>
+              <div class="store-details">
+                <div class="store-details__name">
+                  <h3>name</h3>
 
+                </div>
+                <div class="store-details__address">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non repudiandae
+                    animi,</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="data-list__item">
+            <div class="store">
+              <div class="store-image">
+                <img src="assets/img/store/store.jpg">
+              </div>
+              <div class="store-details">
+                <div class="store-details__name">
+                  <h3>name</h3>
+
+                </div>
+                <div class="store-details__address">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non repudiandae
+                    animi,</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="data-list__item">
+            <div class="store">
+              <div class="store-image">
+                <img src="assets/img/store/store.jpg">
+              </div>
+              <div class="store-details">
+                <div class="store-details__name">
+                  <h3>name</h3>
+
+                </div>
+                <div class="store-details__address">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non repudiandae
+                    animi,</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="data-map">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+    <div class="location-finder__footer"></div>
+  </div>
+  <footer>
+    <p>&copy 2hats</p>
+  </footer>
   <script src='assets/js/jquery.min.js'></script>
   <script src='assets/js/app.min.js'></script>
 </body>

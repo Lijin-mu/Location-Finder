@@ -13,14 +13,15 @@
 // Layouts
 @import "./layouts/header";
 @import "./layouts/footer";
-@import "./layouts/filter-table";
-@import "./layouts/data-table";
+@import "./layouts/location-finder";
+@import "./layouts/data";
 
 
 // Components
-@import "components/ft-filter";
-@import "./components/forms";
+@import "./components/data-categories"; 
+@import "components/map";
+@import "./components/store";
 @import "./components/buttons"; 
-@import "./components/output-result"; 
+
 
 // Pages 

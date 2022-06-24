@@ -1,0 +1,26 @@
+.data-categories{
+    width: 100%;
+    height: auto;
+    padding: rem(10);
+    @include flex(center,center);
+    &__item{
+        width: auto;
+        height: auto;
+        white-space: nowrap;
+        padding: rem(5) rem(30);
+        background: $primary-color;
+        color: $white-color;
+        border-radius: rem(10);
+        text-transform: capitalize;
+        cursor: pointer;
+        &.active,
+        &:focus,
+        &:hover{
+            background: $secondary-color;
+            color: $black-color;
+        }
+    }
+    &__item +  &__item{
+        margin-left: rem(15);
+    }
+}

@@ -1,0 +1,20 @@
+.data{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 80vh;
+    &-list{
+        max-width: 25%;
+        height: auto;
+        align-self: normal;
+        &__item{
+            border-bottom: rem(1) solid $light-grey;
+        }
+    }
+    &-map{
+        flex: 1;
+        align-self: normal;
+    }
+}

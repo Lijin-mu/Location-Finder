@@ -20,9 +20,12 @@ body {
   font-size: rem(16);
   font-weight: 400;
   line-height: rem(24);
-  min-height: 100%;
   letter-spacing: -1%;
-  color: $secondary-color;
+  color: $text-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
