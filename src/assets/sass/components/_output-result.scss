@@ -1,0 +1,11 @@
+.output-result{
+    .btn{
+        visibility: hidden;
+        &.visible{
+            visibility: visible;
+        }
+    }
+    .btn + .btn{
+        margin-left: 10px;
+    }
+}

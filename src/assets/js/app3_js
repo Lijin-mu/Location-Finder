@@ -1,0 +1,367 @@
+let table = document.querySelector(".data-view");
+let filterTable = document.querySelector(".ft-filter");
+
+let userArray =[];
+let statusArray=[];
+let milestoneArray=[];
+let priorityArray=[];
+let tagsArray=[];
+
+let mainData = [];
+
+let selectedFiltersArray = ["asignee","status","milestone","priority","tags"];
+let filters = [];
+
+let userFilter;
+let statusFilter;
+let milestoneFilter;
+let priorityFilter;
+let tagsFilter;
+
+var filterApp = {
+
+    fetchData :async function(){
+        const requestURL = 'database/main-data.json';
+        const request = new Request(requestURL);
+        const response = await fetch(request);
+        mainData = await response.json();
+    },
+
+    populateTable: function (tableData) {
+        table.innerHTML = '';
+        for (let data of tableData) {
+            let row = table.insertRow(-1);
+            let title = row.insertCell(0);
+            title.innerHTML = data.title;
+        
+            let createdAt = row.insertCell(1);
+            createdAt.innerHTML = data.createdAt;
+
+            let dueAt = row.insertCell(2);
+            dueAt.innerHTML = data.dueAt;
+
+            let priority = row.insertCell(3);
+            priority.innerHTML = data.priority;
+
+            let milestone = row.insertCell(4);
+            milestone.innerHTML = data.milestone;
+
+            let asignee = row.insertCell(5);
+            asignee.innerHTML = data.asignee;
+
+            let tags = row.insertCell(6);
+            tags.innerHTML = data.tags;
+          }
+    },
+    populateFilter: function(tableData){  
+        // console.log(tableData);
+
+        // selectedFiltersArray
+
+        let fArray = [];
+
+
+                //   for(let k=0;k<=selectedFiltersArray.length; k++){
+                    
+                //     if(key == selectedFiltersArray[k]){
+                //         filt.push(value[key]);
+                        
+                //     }
+     
+                // }
+
+                      
+                
+                for(let k=0;k<selectedFiltersArray.length; k++){
+                    let div = document.createElement('div');
+                    div.classList.add('ft-filter__item');
+                    let label = document.createElement('label');
+                    let select = document.createElement('select');
+                    select.classList.add('form-select');
+                    select.classList.add(selectedFiltersArray[k]);
+                    select[0] = new Option("select");
+
+                    let text = document.createTextNode(selectedFiltersArray[k]);
+                    label.appendChild(text);
+                    div.appendChild(label);
+                    div.appendChild(select);
+                    filterTable.appendChild(div);
+                    let fit =[];
+                    tableData.forEach((myitem) => {
+                        
+                        for(let key in myitem){
+                            if(key == selectedFiltersArray[k]){
+                                fit.push(myitem[key]);
+                            }
+                        }
+                    });
+                    fit = [...new Set(fit)];
+                    fit = fit.sort();
+                    fit.forEach((element,key) => {
+                        select[key + 1] = new Option(element);
+                    });
+
+                    fArray.push(fit);
+                    console.log(fArray);
+     
+                }
+
+        
+        // const arrays = [{ name: "foo1",value: "val1" }, {name: "foo1", value: ["val2", "val3"] }, {name: "foo2",value: "val4"}];
+
+// const map = new Map(tableData.map(({name, value}) => [name, { name, value: [] }])); 
+// for (let {name, value} of arrays) map.get(name).value.push(...[value].flat());
+// console.log([...map.values()]);
+
+
+                
+                // const map = new Map(tableData.map(({asignee, value}) => [asignee, { asignee, value: [] }])); 
+                // for (let {asignee, value} of tableData) map.get(asignee).value.push(...[value].flat());
+                // console.log([...map.values()]);
+
+     
+
+       
+
+        //     let fdatas = [];
+        //  tableData.forEach((value) => {
+        //     let filt = [];
+        //     for(let key in value){
+        //         console.log(key);
+        //         console.log(value[key]);
+                
+        //         for(let k=0;k<=selectedFiltersArray.length; k++){
+                    
+        //             if(key == selectedFiltersArray[k]){
+        //                 filt.push(value[key]);
+                        
+        //             }
+     
+        //         }
+        //         console.log(filt);
+
+
+        //      }
+             
+
+           
+        // });
+
+    //    let fdatas = [];
+    //      tableData.forEach((value) => {
+    //         for(let k=0;k<=selectedFiltersArray.length; k++){
+    //             // console.log(selectedFiltersArray[k]);
+    //             // let mic = indexOf(value[k]);
+    //             // console.log(mic);
+    //             console.log(value.hasOwnProperty(selectedFiltersArray[k]));
+    //             console.log() 
+ 
+    //         }
+    //     });
+
+     
+
+    },
+
+    addFilterOption: function (elem,selector,defaultValue) {
+        let selectItem = document.querySelector(selector);
+        selectItem[0] = new Option(defaultValue);
+        elem.forEach((element,key) => {
+            selectItem[key + 1] = new Option(element);
+        });
+    },
+    
+    addFilterValue:function(item, array){
+        array.push(item);
+    },
+
+    filterPopulate : function(tableData){
+        // tableData.forEach((value) => {
+        //     filterApp.addFilterValue(value.asignee, userArray);
+        //     filterApp.addFilterValue(value.status, statusArray);
+        //     filterApp.addFilterValue(value.milestone, milestoneArray);
+        //     filterApp.addFilterValue(value.priority, priorityArray);
+        //     filterApp.addFilterValue(value.tags, tagsArray);
+        // });
+    },
+
+    loadData:function(data){
+        this.populateTable(data);
+        this.populateFilter(data);
+        this.filterPopulate(data);
+       
+    },
+
+    dataSaveToPdf:function(){
+        window.jsPDF = window.jspdf.jsPDF;
+
+            $('.save-data-pdf').on('click', function (e) {
+
+                // var element = document.querySelector('.data-table');
+                // html2pdf().from(element).save();
+                // var element = document.querySelector('.data-table');
+                // var opt = {
+                // margin:       1,
+                // filename:     'myfile.pdf',
+                // html2canvas:  { scale: 2 },
+                // jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+                // };
+                
+                // New Promise-based usage:
+                // html2pdf().from(element).set(opt).save();
+
+
+                // const options = {
+                //     orientation: "landscape",
+                //     unit: "px",
+                // }
+                // pdfConf = {
+                //     pagesplit: false,
+                //     background: '#fff'
+                //   };
+
+                // const doc = new jsPDF();
+                // let htmlel = $(".data-table").html();
+                // doc.html(htmlel, {
+                //     callback: function (doc) {
+                //         debugger;
+                //       doc.save();
+                //     }
+                //  });
+
+                // const pdf = new jsPDF('l', 'px', [1200, 1210], true);
+                // // const pdf = new jsPDF('portrait', 'pt', 'a4', true);
+               
+
+                //  pdf.html(document.querySelector('.data-table'), {
+                //     callback: function (doc) {
+                //         doc.deletePage(2-8);
+                //       doc.save();
+
+                //     },
+                //     x: 10,
+		        //     y: 10
+                //   }) 
+                
+          
+                    // const input = document.querySelector('.data-table');
+                
+                    // html2canvas(input)
+                    //     .then((canvas) => {
+                    //         const imgData = canvas.toDataURL('image/png');
+                    //         const pdf = new jsPDF('l', 'mm', 'a4', false);
+                    //         var width = pdf.internal.pageSize.getWidth();
+                    //         var height = pdf.internal.pageSize.getHeight();
+                    //         let htmlel = $(".data-table").html();
+                    //         pdf.html(htmlel, {
+                    //             callback: function (doc) {
+                    //             doc.save("test.pdf");
+                    //             }
+                    //         });
+                    //     });
+
+                    let doc = new jsPDF("p", "pt", "a4");
+                    let html =document.querySelector('.data-table').innerHTML;
+                    
+                     doc.html(html);
+                    doc.save("call.pdf");
+        
+
+               
+
+            });
+        
+    },
+
+    FilterData:function(data){
+
+        let filterArray = [];
+
+        if (userFilter != "select"){
+            filterArray.asignee = userFilter;
+        }
+        if (statusFilter != "select"){
+            filterArray.status = statusFilter;
+        }
+        if (milestoneFilter != "select"){
+            filterArray.milestone = milestoneFilter;
+        }
+        if (priorityFilter != "select"){
+            filterArray.priority = priorityFilter;
+        }
+        if (tagsFilter != "select"){
+            filterArray.tags = tagsFilter;
+        }
+
+        let fiteredData = data;
+
+        if (filterArray.asignee){
+            fiteredData = fiteredData.filter((a)=>{if(a.asignee == filterArray.asignee){return a}});
+        }
+        if (filterArray.status){
+            fiteredData = fiteredData.filter((a)=>{if(a.status == filterArray.status){return a}});
+        }
+        if (filterArray.milestone){
+            fiteredData = fiteredData.filter((a)=>{if(a.milestone == filterArray.milestone){return a}});
+        }
+        if (filterArray.priority){
+            fiteredData = fiteredData.filter((a)=>{if(a.priority == filterArray.priority){return a}});
+        }
+        if (filterArray.tags){
+            fiteredData = fiteredData.filter((a)=>{if(a.tags == filterArray.tags){return a}});
+        }
+
+        filterApp.populateTable(fiteredData);
+    },
+
+    filterSelectHandler:function(data){
+        let mainFilter = [];
+        $('select').on('change', function (e) {
+           console.log("selected");
+        //    if(e.target.classList)
+        //    e.target.classList = [];
+           let selectdValue = $(this).val();
+        //    console.log(selectdValue);
+
+           
+           mainFilter = [...{selectdValue : selectdValue }];
+           console.log(mainFilter);
+        });
+
+        $('.asignee').on('change', function (e) {
+            userFilter = $('.asignee').val();
+            filterApp.FilterData(data);
+        });
+        $('.status').on('change', function (e) {
+            statusFilter = $('.status').val();
+            filterApp.FilterData(data);
+        });
+        $('.milestone').on('change', function (e) {
+            milestoneFilter = $('.milestone').val();
+            filterApp.FilterData(data);
+        });
+        $('.priority').on('change', function (e) {
+            priorityFilter = $('.priority').val();
+            filterApp.FilterData(data);
+        });
+        $('.tags').on('change', function (e) {
+            tagsFilter = $('.tags').val();
+            filterApp.FilterData(data);
+        });
+    },
+
+    init: async function(){
+        await this.fetchData();
+        this.loadData(mainData);
+        this.filterSelectHandler(mainData);
+    }
+
+}
+
+filterApp.init();
+
+
+
+
+
+

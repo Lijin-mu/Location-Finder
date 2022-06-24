@@ -1,0 +1,45 @@
+/*------------------*
+# Variables
+*------------------*/
+
+// Breakpoints
+$desktop-lg: rem(1919); // Wide Desktop Screens (Above 1680 - Large Screens)
+$desktop-md: rem(1620); // Medium Desktop Screens (Like 1480 - Macbook & Macbook Pro)
+$desktop-sm: rem(1420); // Small Desktop Screens
+$desktop-xs: rem(1360); // Small Desktop Screens
+
+$tablet-lg: rem(1080); // Landscape Tablet
+$tablet-md: rem(991); // Portrait Medium Tablet
+$tablet-sm: rem(865); // Portrait Tablet
+
+$mobile-lg: rem(767); // Mobile Landscale
+$mobile-md: rem(576); // Mobile Medium Portrait
+$mobile-sm: rem(540); // Mobile Portrait
+
+/*
+* Paths
+*/
+$mainlink-assets-path: "/dist";
+$mainlink-font-path: "../fonts";
+
+/*
+* Fonts
+*/
+
+$font-main: 'Roboto', sans-serif;
+
+
+/*
+ * Base colors
+*/
+
+// Theme colours
+
+$primary-color: #187db8;
+$secondary-color: #6B7280;
+$border-color:#f2f2f2;
+
+ 
+//Other Colors
+$white-color: #fff;
+$black-color: #000;

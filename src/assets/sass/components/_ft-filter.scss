@@ -1,0 +1,8 @@
+.ft-filter{
+    @include flex(center, space-between);
+    padding: rem(10);
+    &__item{
+        flex: 1;
+        padding: rem(5);
+    }
+}

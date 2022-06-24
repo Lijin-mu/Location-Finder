@@ -1,0 +1,18 @@
+section {
+  overflow: hidden;
+  padding: rem(20) 0 rem(45) ;
+  
+  @include mobile-lg(){
+    padding: rem(25) 0 rem(30);
+  }
+
+  &.ptop-0 {
+    padding-top: 0;
+  }
+  &.pbottom-0 {
+    padding-bottom: 0;
+  }
+  &.light-bg {
+    background: $secondary-color; 
+  }
+}
