@@ -4,15 +4,15 @@
       "name": "Gynk",
       "category": "gifts",
       "location": {
-        "lat": 2.121931,
-        "long": 56.623271
+        "lat": 12.120000,
+        "long": 76.680000
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Paraguay",
         "email": "dellastephens@gynk.com",
         "phone": "+1 (859) 566-2931",
-        "address": "514 Richmond Street, Bascom, Missouri}}"
+        "address": "Nanjangud, Mysore, Karnataka, India"
       }
     },
     {
@@ -20,15 +20,15 @@
       "name": "Quility",
       "category": "gifts",
       "location": {
-        "lat": 28.777939,
-        "long": 44.863349
+        "lat": 24.879999,
+        "long": 74.629997
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Moldova",
         "email": "dellastephens@quility.com",
         "phone": "+1 (893) 539-2250",
-        "address": "951 Girard Street, Ivanhoe, Montana}}"
+        "address": "Chittorgarh, Rajasthan, India"
       }
     },
     {
@@ -36,15 +36,15 @@
       "name": "Realmo",
       "category": "gifts",
       "location": {
-        "lat": 80.938422,
-        "long": 147.234425
+        "lat": 16.994444,
+        "long": 73.300003
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Malaysia",
         "email": "dellastephens@realmo.com",
         "phone": "+1 (868) 455-2796",
-        "address": "622 Bulwer Place, Blue, Vermont}}"
+        "address": "Ratnagiri, Maharashtra, India"
       }
     },
     {
@@ -52,15 +52,15 @@
       "name": "Shopabout",
       "category": "electronics",
       "location": {
-        "lat": -43.433228,
-        "long": -149.292381
+        "lat": 19.155001,
+        "long": 72.849998
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "British Indian Ocean Territory",
         "email": "dellastephens@shopabout.com",
         "phone": "+1 (802) 479-2378",
-        "address": "584 Whitwell Place, Emory, Maryland}}"
+        "address": "Goregaon, Mumbai, Maharashtra, India"
       }
     },
     {
@@ -68,15 +68,15 @@
       "name": "Kindaloo",
       "category": "beauty",
       "location": {
-        "lat": 33.090011,
-        "long": -94.222056
+        "lat": 24.794500,
+        "long": 73.055000
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Mauritius",
         "email": "dellastephens@kindaloo.com",
         "phone": "+1 (933) 476-3805",
-        "address": "118 Bridgewater Street, Irwin, Marshall Islands}}"
+        "address": "Pindwara, Rajasthan, India"
       }
     },
     {
@@ -84,15 +84,15 @@
       "name": "Protodyne",
       "category": "grocery",
       "location": {
-        "lat": -55.353562,
-        "long": -144.91074
+        "lat": 21.250000,
+        "long": 81.629997
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Western Sahara",
         "email": "dellastephens@protodyne.com",
         "phone": "+1 (954) 481-2924",
-        "address": "268 Poplar Avenue, Hackneyville, Wyoming}}"
+        "address": "Raipur, Chhattisgarh, India"
       }
     },
     {
@@ -100,15 +100,15 @@
       "name": "Xurban",
       "category": "mobiles",
       "location": {
-        "lat": 14.090035,
-        "long": 22.774551
+        "lat": 16.166700,
+        "long": 74.833298
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Tonga",
         "email": "dellastephens@xurban.com",
         "phone": "+1 (924) 534-2156",
-        "address": "555 Vermont Street, Edenburg, Wisconsin}}"
+        "address": "Gokak, Karnataka, India"
       }
     },
     {
@@ -116,15 +116,15 @@
       "name": "Pyramia",
       "category": "mobiles",
       "location": {
-        "lat": -35.248277,
-        "long": 126.688118
+        "lat": 26.850000,
+        "long": 80.949997
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Slovak Republic",
         "email": "dellastephens@pyramia.com",
         "phone": "+1 (864) 495-3742",
-        "address": "910 Linwood Street, Brutus, District Of Columbia}}"
+        "address": "Lucknow, Uttar Pradesh, India"
       }
     },
     {
@@ -132,15 +132,15 @@
       "name": "Anixang",
       "category": "beauty",
       "location": {
-        "lat": -15.054618,
-        "long": 149.084601
+        "lat": 28.679079,
+        "long": 77.069710
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Slovenia",
         "email": "dellastephens@anixang.com",
         "phone": "+1 (812) 456-2164",
-        "address": "395 Farragut Road, Moscow, Idaho}}"
+        "address": "Delhi, India"
       }
     },
     {
@@ -148,15 +148,15 @@
       "name": "Tingles",
       "category": "mobiles",
       "location": {
-        "lat": -86.212641,
-        "long": 175.915593
+        "lat": 19.076090,
+        "long": 72.877426
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Benin",
         "email": "dellastephens@tingles.com",
         "phone": "+1 (840) 497-2567",
-        "address": "726 Gallatin Place, Naomi, Puerto Rico}}"
+        "address": "Mumbai, Maharashtra, India"
       }
     },
     {
@@ -164,15 +164,15 @@
       "name": "Zilch",
       "category": "grocery",
       "location": {
-        "lat": -6.051432,
-        "long": -52.461604
+        "lat": 14.167040,
+        "long": 75.040298
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Oman",
         "email": "dellastephens@zilch.com",
         "phone": "+1 (861) 430-2225",
-        "address": "860 Greenpoint Avenue, Rockingham, Tennessee}}"
+        "address": "Sagar, Karnataka, India"
       }
     },
     {
@@ -180,15 +180,15 @@
       "name": "Comfirm",
       "category": "beauty",
       "location": {
-        "lat": 82.913978,
-        "long": -90.21275
+        "lat": 26.540457,
+        "long": 88.719391
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Brunei Darussalam",
         "email": "dellastephens@comfirm.com",
         "phone": "+1 (941) 556-2760",
-        "address": "925 Doone Court, Cumminsville, Northern Mariana Islands}}"
+        "address": "Jalpaiguri, West Bengal, India"
       }
     },
     {
@@ -196,15 +196,15 @@
       "name": "Acrodance",
       "category": "mobiles",
       "location": {
-        "lat": 13.946174,
-        "long": 55.322581
+        "lat": 24.633568,
+        "long": 87.849251
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Trinidad and Tobago",
         "email": "dellastephens@acrodance.com",
         "phone": "+1 (815) 588-3731",
-        "address": "106 Crystal Street, Kula, North Dakota}}"
+        "address": "Pakur, Jharkhand, India"
       }
     },
     {
@@ -212,15 +212,15 @@
       "name": "Quizmo",
       "category": "mobiles",
       "location": {
-        "lat": 57.114515,
-        "long": 96.030232
+        "lat": 28.440554,
+        "long": 74.493011
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Madagascar",
         "email": "dellastephens@quizmo.com",
         "phone": "+1 (830) 579-3391",
-        "address": "547 Lafayette Avenue, Abrams, Michigan}}"
+        "address": "Sardarshahar, Rajasthan, India"
       }
     },
     {
@@ -228,15 +228,15 @@
       "name": "Jamnation",
       "category": "health",
       "location": {
-        "lat": -86.6298,
-        "long": -48.388943
+        "lat": 24.882618,
+        "long": 72.858894
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Zambia",
         "email": "dellastephens@jamnation.com",
         "phone": "+1 (804) 400-3537",
-        "address": "537 Stryker Court, Clara, Alaska}}"
+        "address": "Sirohi, Rajasthan, India"
       }
     },
     {
@@ -244,15 +244,15 @@
       "name": "Omnigog",
       "category": "grocery",
       "location": {
-        "lat": -69.788816,
-        "long": -152.39981
+        "lat": 16.779877,
+        "long": 74.556374
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Chile",
         "email": "dellastephens@omnigog.com",
         "phone": "+1 (969) 594-3757",
-        "address": "790 Ralph Avenue, Stewartville, South Dakota}}"
+        "address": "Jaysingpur, Maharashtra, India"
       }
     },
     {
@@ -260,15 +260,15 @@
       "name": "Icology",
       "category": "grocery",
       "location": {
-        "lat": 20.364604,
-        "long": 160.535421
+        "lat": 12.715035,
+        "long": 77.281296
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Solomon Islands",
         "email": "dellastephens@icology.com",
         "phone": "+1 (967) 425-2879",
-        "address": "757 Clay Street, Roy, Utah}}"
+        "address": "Ramanagara, Karnataka, India"
       }
     },
     {
@@ -276,15 +276,15 @@
       "name": "Plasmosis",
       "category": "electronics",
       "location": {
-        "lat": -31.60177,
-        "long": 42.810328
+        "lat": 13.432515,
+        "long": 77.727478
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Nicaragua",
         "email": "dellastephens@plasmosis.com",
         "phone": "+1 (993) 589-2588",
-        "address": "670 Hull Street, Salunga, Arizona}}"
+        "address": "Chikkaballapura, Karnataka, India"
       }
     },
     {
@@ -292,15 +292,15 @@
       "name": "Obliq",
       "category": "electronics",
       "location": {
-        "lat": 80.165615,
-        "long": -112.0569
+        "lat": 12.651805,
+        "long": 77.208946
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "S. Georgia and S. Sandwich Isls.",
         "email": "dellastephens@obliq.com",
         "phone": "+1 (912) 568-3401",
-        "address": "942 Bills Place, Hebron, Hawaii}}"
+        "address": "Channapatna, Karnataka, India"
       }
     },
     {
@@ -308,15 +308,15 @@
       "name": "Bolax",
       "category": "gifts",
       "location": {
-        "lat": -20.971434,
-        "long": 136.989659
+        "lat": 22.728392,
+        "long": 71.637077
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Macau",
         "email": "dellastephens@bolax.com",
         "phone": "+1 (857) 482-3658",
-        "address": "991 Homecrest Avenue, Northchase, Florida}}"
+        "address": "Surendranagar, Gujarat, India"
       }
     },
     {
@@ -324,15 +324,15 @@
       "name": "Hydrocom",
       "category": "electronics",
       "location": {
-        "lat": -51.626718,
-        "long": -108.921577
+        "lat": 9.383452,
+        "long": 76.574059
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Angola",
         "email": "dellastephens@hydrocom.com",
         "phone": "+1 (832) 411-2938",
-        "address": "209 Chase Court, Monument, Virgin Islands}}"
+        "address": "Thiruvalla, Kerala, India"
       }
     },
     {
@@ -340,15 +340,15 @@
       "name": "Zoid",
       "category": "grocery",
       "location": {
-        "lat": -64.19586,
-        "long": 108.907168
+        "lat": 14.623801,
+        "long": 75.621788
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Reunion",
         "email": "dellastephens@zoid.com",
         "phone": "+1 (977) 487-3378",
-        "address": "869 Ditmas Avenue, Dundee, Guam}}"
+        "address": "Ranebennur, Karnataka, India"
       }
     },
     {
@@ -356,15 +356,15 @@
       "name": "Pulze",
       "category": "mobiles",
       "location": {
-        "lat": 29.949992,
-        "long": 136.319686
+        "lat": 10.925440,
+        "long": 79.838005
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Kenya",
         "email": "dellastephens@pulze.com",
         "phone": "+1 (974) 426-3841",
-        "address": "129 Guernsey Street, Dexter, Maine}}"
+        "address": "Karaikal, Puducherry, India"
       }
     },
     {
@@ -372,15 +372,15 @@
       "name": "Softmicro",
       "category": "electronics",
       "location": {
-        "lat": 41.945478,
-        "long": -42.300513
+        "lat": 15.852792,
+        "long": 74.498703
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Croatia (Hrvatska)",
         "email": "dellastephens@softmicro.com",
         "phone": "+1 (880) 431-3931",
-        "address": "654 Columbus Place, Ventress, Massachusetts}}"
+        "address": "Belgaum, Karnataka, India"
       }
     },
     {
@@ -388,15 +388,15 @@
       "name": "Codact",
       "category": "gifts",
       "location": {
-        "lat": 49.164733,
-        "long": -140.885277
+        "lat": 19.354979,
+        "long": 84.986732
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Cote D'Ivoire (Ivory Coast)",
         "email": "dellastephens@codact.com",
         "phone": "+1 (959) 513-3739",
-        "address": "348 Nassau Street, Herbster, Delaware}}"
+        "address": "Chatrapur, Odisha, India"
       }
     },
     {
@@ -404,15 +404,15 @@
       "name": "Oceanica",
       "category": "mobiles",
       "location": {
-        "lat": -3.317408,
-        "long": -23.133959
+        "lat": 23.905445,
+        "long": 87.524620
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "US Minor Outlying Islands",
         "email": "dellastephens@oceanica.com",
         "phone": "+1 (962) 467-2831",
-        "address": "205 Lake Street, Washington, Oklahoma}}"
+        "address": "Suri, West Bengal, India"
       }
     },
     {
@@ -420,15 +420,15 @@
       "name": "Quonata",
       "category": "beauty",
       "location": {
-        "lat": 16.941453,
-        "long": -173.63523
+        "lat": 20.296059,
+        "long": 85.824539
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Colombia",
         "email": "dellastephens@quonata.com",
         "phone": "+1 (829) 471-2428",
-        "address": "903 Emerald Street, Blodgett, Palau}}"
+        "address": "Bhubaneswar, Odisha, India"
       }
     },
     {
@@ -436,15 +436,15 @@
       "name": "Duoflex",
       "category": "grocery",
       "location": {
-        "lat": 73.739764,
-        "long": -46.668134
+        "lat": 21.105001,
+        "long": 71.771645
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Greenland",
         "email": "dellastephens@duoflex.com",
         "phone": "+1 (801) 534-3392",
-        "address": "599 Elliott Walk, Reno, Georgia}}"
+        "address": "Mahuva, Gujarat, India"
       }
     },
     {
@@ -452,15 +452,15 @@
       "name": "Kengen",
       "category": "electronics",
       "location": {
-        "lat": 6.93371,
-        "long": 94.349213
+        "lat": 30.172716,
+        "long": 77.299492
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Kiribati",
         "email": "dellastephens@kengen.com",
         "phone": "+1 (838) 576-3453",
-        "address": "689 Montague Terrace, Wollochet, Pennsylvania}}"
+        "address": "Jagadhri, Haryana, India"
       }
     },
     {
@@ -468,15 +468,15 @@
       "name": "Biotica",
       "category": "gifts",
       "location": {
-        "lat": -64.5893,
-        "long": 141.337577
+        "lat": 25.477585,
+        "long": 85.709091
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Grenada",
         "email": "dellastephens@biotica.com",
         "phone": "+1 (955) 565-3775",
-        "address": "702 Cornelia Street, Warsaw, Oregon}}"
+        "address": "Barh, Bihar, India"
       }
     },
     {
@@ -484,15 +484,15 @@
       "name": "Bunga",
       "category": "beauty",
       "location": {
-        "lat": 14.139412,
-        "long": 168.010664
+        "lat": 21.045521,
+        "long": 75.801094
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Kyrgyzstan",
         "email": "dellastephens@bunga.com",
         "phone": "+1 (989) 527-3277",
-        "address": "311 Middagh Street, Chalfant, American Samoa}}"
+        "address": "Bhusawal, Maharashtra, India"
       }
     },
     {
@@ -500,15 +500,15 @@
       "name": "Remold",
       "category": "electronics",
       "location": {
-        "lat": 22.459957,
-        "long": 120.613663
+        "lat": 26.491890,
+        "long": 89.527100
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Tanzania",
         "email": "dellastephens@remold.com",
         "phone": "+1 (945) 591-2410",
-        "address": "624 Dooley Street, Vandiver, Minnesota}}"
+        "address": "Alipurduar, West Bengal, India"
       }
     },
     {
@@ -516,15 +516,15 @@
       "name": "Lovepad",
       "category": "health",
       "location": {
-        "lat": 0.02576,
-        "long": 1.672615
+        "lat": 8.893212,
+        "long": 76.614143
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Luxembourg",
         "email": "dellastephens@lovepad.com",
         "phone": "+1 (900) 454-3652",
-        "address": "360 Vandervoort Place, Bath, Rhode Island}}"
+        "address": "Kollam, Kerala, India"
       }
     },
     {
@@ -532,15 +532,15 @@
       "name": "Gracker",
       "category": "grocery",
       "location": {
-        "lat": -28.011897,
-        "long": -92.294021
+        "lat": 22.430889,
+        "long": 87.321487
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Guyana",
         "email": "dellastephens@gracker.com",
         "phone": "+1 (824) 519-2154",
-        "address": "758 Johnson Avenue, Vernon, Connecticut}}"
+        "address": "Medinipur, West Bengal, India"
       }
     },
     {
@@ -548,15 +548,15 @@
       "name": "Apextri",
       "category": "electronics",
       "location": {
-        "lat": 37.344807,
-        "long": 128.909295
+        "lat": 23.849325,
+        "long": 72.126625
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Ireland",
         "email": "dellastephens@apextri.com",
         "phone": "+1 (871) 478-2112",
-        "address": "655 Oceanic Avenue, Goochland, Illinois}}"
+        "address": "Patan, Gujarat, India"
       }
     },
     {
@@ -564,15 +564,15 @@
       "name": "Emtrak",
       "category": "mobiles",
       "location": {
-        "lat": -48.331407,
-        "long": 22.549319
+        "lat": 11.786253,
+        "long": 77.800781
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Canada",
         "email": "dellastephens@emtrak.com",
         "phone": "+1 (989) 494-3382",
-        "address": "206 Navy Walk, Gouglersville, New Hampshire}}"
+        "address": "Mettur, Tamil Nadu, India"
       }
     },
     {
@@ -580,15 +580,15 @@
       "name": "Genesynk",
       "category": "mobiles",
       "location": {
-        "lat": -6.856954,
-        "long": -70.029534
+        "lat": 13.583274,
+        "long": 76.540154
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Belgium",
         "email": "dellastephens@genesynk.com",
         "phone": "+1 (947) 473-3619",
-        "address": "483 Suydam Street, Virgie, Alabama}}"
+        "address": "Huliyar, Karnataka, India"
       }
     },
     {
@@ -596,15 +596,15 @@
       "name": "Zensure",
       "category": "electronics",
       "location": {
-        "lat": -38.1906,
-        "long": -43.563104
+        "lat": 14.530457,
+        "long": 75.801094
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Netherlands Antilles",
         "email": "dellastephens@zensure.com",
         "phone": "+1 (830) 525-2676",
-        "address": "114 Seton Place, Templeton, North Carolina}}"
+        "address": "Harihar, Karnataka, India"
       }
     },
     {
@@ -612,15 +612,15 @@
       "name": "Waab",
       "category": "beauty",
       "location": {
-        "lat": 19.197058,
-        "long": 67.443628
+        "lat": 18.901457,
+        "long": 73.176132
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Bouvet Island",
         "email": "dellastephens@waab.com",
         "phone": "+1 (812) 542-2496",
-        "address": "543 Montauk Court, Whitestone, Colorado}}"
+        "address": "Rasayani, Maharashtra, India"
       }
     },
     {
@@ -628,15 +628,15 @@
       "name": "Anocha",
       "category": "beauty",
       "location": {
-        "lat": 33.360748,
-        "long": -69.58072
+        "lat": 22.960510,
+        "long": 88.567406
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Guinea-Bissau",
         "email": "dellastephens@anocha.com",
         "phone": "+1 (995) 444-2045",
-        "address": "802 Macdougal Street, Rew, Kentucky}}"
+        "address": "Haringhata, West Bengal, India"
       }
     },
     {
@@ -644,15 +644,15 @@
       "name": "Caxt",
       "category": "electronics",
       "location": {
-        "lat": -53.066053,
-        "long": -100.625356
+        "lat": 15.756595,
+        "long": 76.192696
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Guadeloupe",
         "email": "dellastephens@caxt.com",
         "phone": "+1 (908) 448-3179",
-        "address": "664 Chapel Street, Grill, Federated States Of Micronesia}}"
+        "address": "Kushtagi, Karnataka, India"
       }
     },
     {
@@ -660,15 +660,15 @@
       "name": "Frolix",
       "category": "gifts",
       "location": {
-        "lat": 29.076519,
-        "long": -150.728074
+        "lat": 22.656015,
+        "long": 86.352882
       },
       "company": {
-        "image": "http://placehold.it/32x32",
+        "image": "assets/img/store/store.jpg",
         "country": "Rwanda",
         "email": "dellastephens@frolix.com",
         "phone": "+1 (920) 551-2154",
-        "address": "995 Matthews Court, Bainbridge, Indiana}}"
+        "address": "Jadugora, Jharkhand, India"
       }
     }
   ]

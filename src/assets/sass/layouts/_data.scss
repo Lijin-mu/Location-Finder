@@ -7,8 +7,11 @@
     min-height: 80vh;
     &-list{
         max-width: 25%;
+        width: 25%;
         height: auto;
         align-self: normal;
+        max-height: 80vh;
+        overflow: scroll;
         &__item{
             border-bottom: rem(1) solid $light-grey;
         }

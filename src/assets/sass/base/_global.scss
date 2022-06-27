@@ -168,6 +168,12 @@ blockquote {
 .color-primary{
   color: $primary-color;
 }
+.clear{
+  clear: both;
+}
+.leaflet-popup{
+  bottom: rem(20) !important;
+}
 
 @for $i from 1 through 6 {
   .ptop-#{$i} {

@@ -2,6 +2,11 @@
     width: 100%;
     height: auto;
     padding: rem(10);
+    cursor: pointer;
+    cursor: pointer;
+  &:hover{
+    background:$hover-grey;
+  }
     &-image{
         width: rem(100);
         height: auto;
