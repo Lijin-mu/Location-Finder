@@ -20,16 +20,15 @@ var locationFinder = {
         for(let data of apiData){  
             fliters.add(data.category);
         }
-        fliters.forEach((item) => {
-            let div = document.createElement('div');
-            div.classList.add('data-categories__item');
-            var attr = document.createAttribute('category');
-            attr.value=item;
-            div.innerHTML = item;
-            div.setAttributeNode(attr);
-            categoryContainer.appendChild(div);
-        });
         filtersArray = [...fliters];
+        let select = document.createElement('select');
+            select.classList.add('form-select');
+            select[0] = new Option('categories');
+            $('.data-categories').append(select);
+            filtersArray.forEach((item, index) => {
+            select[index + 1] = new Option(item);
+        });
+        
     },
     populateStores:function(list){
         storeContainer.innerHTML = '';
@@ -58,10 +57,6 @@ var locationFinder = {
         }).addTo(map);
         if(marker){
             var latlng = L.latLng(lat, long);
-            // var popup = L.popup()
-            // .setLatLng(latlng)
-            // .setContent('<p>Hello world!<br />'  + marker[0].company.address + 'This is a nice popup.</p>')
-            // .openOn(map);
             var popup = L.popup()
             .setLatLng(latlng)
             .setContent('<div class="data-list__item"><div class="store" id="' + marker[0].id + '"><div class="store-image"><img src="' + marker[0].company.image + '"></div><div class="store-details"><div class="store-details__name"><h3>' + marker[0].name + '</h3></div><div class="store-details__address"><p>' + marker[0].company.address + '</p></div></div></div><div class="clear"></div></div>')
@@ -75,14 +70,34 @@ var locationFinder = {
         locationFinder.populateStores(apiData);
     },
 
-    filterStores:function(){
-        $(".data-categories__item").click(function(){
-            let storeCategory = this.getAttribute("category");
-            $(".data-categories__item").removeClass("active");
-            this.classList.add('active');
-            let filteredStoresList = apiData.filter((a)=> a.category == storeCategory);
+    filterStoresWithCategory:function(){
+        $('select').on('change', function (e) {
+            let selectdValue = $(this).val();
+            let filteredStoresList=[];
+            if (selectdValue == 'categories') {
+                filteredStoresList = apiData;
+            } else {
+                filteredStoresList = apiData.filter((a)=> a.category == selectdValue);
+            }
             locationFinder.populateStores(filteredStoresList);
             locationFinder.loadMap(filteredStoresList[0].location.lat, filteredStoresList[0].location.long, filteredStoresList);
+        });
+    },
+    filterStoresWithSearch:function(){
+        const inputValue = document.querySelector('search-input');
+        $('.search-input').on('input',function(e){
+            let inputValue = $(this).val();
+            if(inputValue.length > 2){
+                filteredStoresList = apiData.filter((a)=> a.category.toLowerCase().includes(inputValue) || a.name.toLowerCase().includes(inputValue) || a.company.address.toLowerCase().includes(inputValue));
+                console.log(inputValue.length);
+                console.log(filteredStoresList);
+                $(".data-search-result").empty();
+                for (let store of filteredStoresList) {
+                    $(".data-search-result").append('<div class="data-search-result__item">' + store.name + '</div>');
+                }
+            } else{
+                $(".data-search-result").empty();
+            }
             
         });
     },
@@ -99,7 +114,8 @@ var locationFinder = {
         await this.fetchData();
         this.loadData(apiData);
         this.loadStoreMap();
-        this.filterStores();
+        this.filterStoresWithCategory();
+        this.filterStoresWithSearch();
     }
 }
 

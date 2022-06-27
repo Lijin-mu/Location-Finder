@@ -9,6 +9,10 @@
         height: auto;
        padding: rem(15);
        background: $border-color;
+       @include flex(center, flex-start);
+       .item{
+        width: 25%;
+       }
     }
     &__content{
         width: 100%;
