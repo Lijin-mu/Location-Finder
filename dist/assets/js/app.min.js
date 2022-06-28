@@ -48,20 +48,73 @@ var locationFinder = {
                 maxZoom: 19,
                 attribution: '© OpenStreetMap'
             }).addTo(map);
+            let currentLocation = [];
+            kmArray = [];
+            let clat, clog;
             function onLocationFound(e) {
-                console.log(e.latlng);
-                console.log(e.latlng.lat, e.latlng.lng);
+                currentLocation.lat = e.latlng.lat;
+                currentLocation.long = e.latlng.lng;
+                clat= e.latlng.lat;
+                clog= e.latlng.lng;
+                console.log(clat, 2);
+                let min = 10000;
+                let finalplace = '';
+                for (let store of apiData) {
+                    let lat = store.location.lat;
+                    let long = store.location.long;
+                  
+                    let diff = difference(clog, store.location.long);
+                    if(diff < min){
+                        min = diff;
+                        finalLat = store.id;
+                    }
+                    LocationArray.push({lat, long});
+                    console.log(finalLat);
+                    // R = 6371 
+                    // x = (long - clog) * Math.cos( 0.5*(lat+clat) )
+                    // y = lat - clat
+                    // d = R * Math.sqrt( x*x + y*y );
+                    // if(d<min){
+                    //     min = d;
+                    //     finalplace = store.company.address;
+                    //     finalId = store.id;
+                    // }
+                    
+                    // let addr = store.company.address;
+                    // let distData = {addr, d};
+                    // kmArray.push(distData);
+
+                   
+                }
+                // console.log(kmArray);
+                // console.log(finalplace, finalId);
+                nearestStore = apiData.filter((a)=> a.id == finalLat);
+                console.log(nearestStore);
+                L.marker([nearestStore[0].location.lat, nearestStore[0].location.long]).addTo(map);
+                var latlng = L.latLng(nearestStore[0].location.lat, nearestStore[0].location.long);
+                var popup = L.popup()
+                .setLatLng(latlng)
+                .setContent('<div class="store-popup" id="' + nearestStore[0].id + '"><div class="store-popup-image"><img src="' + nearestStore[0].company.image + '"></div><div class="store-popup-details"><div class="store-popup-details__name"><h3>' + nearestStore[0].name + '</h3></div><div class="store-popup-details__address"><p>' + nearestStore[0].company.address + '</p></div></div></div><div class="clear"></div>')
+                .openOn(map);
             }
             map.on('locationfound', onLocationFound);
-            for (let store of apiData) {
-                L.marker([store.location.lat, store.location.long]).addTo(map);
-            }
+            let LocationArray = [];
+            function difference(a, b) {
+                return Math.abs(a - b);
+              }
+
+           
+            console.log(currentLocation);
+            console.log(LocationArray);
+            LocationArray.sort();
+            console.log(LocationArray);
+           
+
         } else{
             if(marker){
                 var map = L.map('map').setView([lat, long], 13);
             } else{
                 var map = L.map('map').setView([lat, long], 4); 
-                console.log("this is working");
             }
             L.marker([lat, long]).addTo(map);
         }
@@ -133,8 +186,6 @@ var locationFinder = {
             }
             if(inputValue.length > 2){
                 filteredStoresList = apiData.filter((a)=> a.category.toLowerCase().includes(inputValue) || a.name.toLowerCase().includes(inputValue) || a.company.address.toLowerCase().includes(inputValue));
-                console.log(inputValue.length);
-                console.log(filteredStoresList);
                 $(".data-search-result").empty();
                 for (let store of filteredStoresList) {
                     $(".data-search-result").append('<div class="data-search-result__item" id="' + store.id + '"><div class="store-name">' + store.name + '<span class="store-category">' + store.category + '</span></div><div class="store-address">' + store.company.address + '</div></div>');
