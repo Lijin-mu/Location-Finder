@@ -21,23 +21,31 @@
   </header>
   <div class="location-finder">
     <div class="location-finder__header">
-      <div class="item data-search">
+      <div class="header-item data-search">
         <div class="input-group">
-          <input type="text" class="search-input form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-          <span class="input-group-text" id="basic-addon1">
-            <i class="fas fa-search"></i>
+          <input type="text" class="search-input form-control" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+          <span class="input-group-text clear-btn" id="basic-addon1">
+            <i class="fas fa-times-circle"></i>
           </span>
 
         </div>
         <div class="data-search-result">
-          <div class="data-search-result__item"></div>
+          <!--<div class="data-search-result__item"></div>-->
         </div>
       </div>
-      <div class="item data-categories"></div>
+      <div class="header-item data-categories"></div>
+      <div class="header-item nearest-store-finder">
+        <button class="btn btn-primary nearest-store-btn">
+          <i class="fas fa-map-marker-alt"></i> Find Store near my location
+        </button>
+      </div>
     </div>
     <div class="location-finder__content">
       <div class="data">
         <div class="data-list">
+          <div class="message">
+            <p>No stores found, please try another search</p>
+          </div>
           <!-- store item markup <div class="data-list__item"><div class="store"><div class="store-image"><img src="assets/img/store/store.jpg"></div><div class="store-details"><div class="store-details__name"><h3>name</h3></div><div class="store-details__address"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non repudiandae animi,</p></div></div></div><div class="clear"></div></div>-->
         </div>
         <div class="data-map">

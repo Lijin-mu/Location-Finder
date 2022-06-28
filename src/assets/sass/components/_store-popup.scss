@@ -1,0 +1,21 @@
+.store-popup{
+    width: 100%;
+    height: auto;
+    padding: rem(10);
+    cursor: pointer;
+    cursor: pointer;
+    &-image{
+        width: rem(100);
+        height: auto;
+        float: left;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &-details{
+        width: auto;
+        height: auto;
+        margin-left: rem(115);
+    }
+}

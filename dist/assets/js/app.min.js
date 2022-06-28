@@ -4,7 +4,9 @@ let categoryContainer = document.querySelector(".data-categories");
 let storeContainer = document.querySelector(".data-list");
 let storeItem = document.querySelectorAll(".store");
 
-//https://leafletjs.com/ https://leafletjs.com/examples/quick-start/
+//https://leafletjs.com/ https://leafletjs.com/examples/quick-start/ search refernce: https://www.storelocatorwidgets.com/demo
+//search refernce: https://www.only.in/store-locator
+// https://preview.codecanyon.net/item/agile-store-locator-google-maps-for-wordpress/full_screen_preview/16973546?_ga=2.213687831.2012922664.1656339398-211260921.1655994798
 
 var locationFinder = {
 
@@ -40,12 +42,29 @@ var locationFinder = {
     loadMap: function (lat, long, list, marker) {
         $(".data-map").empty();
         $(".data-map").append('<div id="map"></div>');
-        if(marker){
-            var map = L.map('map').setView([lat, long], 13);
+        if(!lat && !long){
+            var map = L.map('map').locate({setView: true, maxZoom: 8});
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+            function onLocationFound(e) {
+                console.log(e.latlng);
+                console.log(e.latlng.lat, e.latlng.lng);
+            }
+            map.on('locationfound', onLocationFound);
+            for (let store of apiData) {
+                L.marker([store.location.lat, store.location.long]).addTo(map);
+            }
         } else{
-            var map = L.map('map').setView([lat, long], 4); 
+            if(marker){
+                var map = L.map('map').setView([lat, long], 13);
+            } else{
+                var map = L.map('map').setView([lat, long], 4); 
+                console.log("this is working");
+            }
+            L.marker([lat, long]).addTo(map);
         }
-        L.marker([lat, long]).addTo(map);
         if(list){
             for (let store of list) {
                 L.marker([store.location.lat, store.location.long]).addTo(map);
@@ -55,11 +74,12 @@ var locationFinder = {
             maxZoom: 19,
             attribution: '© OpenStreetMap'
         }).addTo(map);
+
         if(marker){
             var latlng = L.latLng(lat, long);
             var popup = L.popup()
             .setLatLng(latlng)
-            .setContent('<div class="data-list__item"><div class="store" id="' + marker[0].id + '"><div class="store-image"><img src="' + marker[0].company.image + '"></div><div class="store-details"><div class="store-details__name"><h3>' + marker[0].name + '</h3></div><div class="store-details__address"><p>' + marker[0].company.address + '</p></div></div></div><div class="clear"></div></div>')
+            .setContent('<div class="store-popup" id="' + marker[0].id + '"><div class="store-popup-image"><img src="' + marker[0].company.image + '"></div><div class="store-popup-details"><div class="store-popup-details__name"><h3>' + marker[0].name + '</h3></div><div class="store-popup-details__address"><p>' + marker[0].company.address + '</p></div></div></div><div class="clear"></div>')
             .openOn(map);
         } 
     },
@@ -83,23 +103,60 @@ var locationFinder = {
             locationFinder.loadMap(filteredStoresList[0].location.lat, filteredStoresList[0].location.long, filteredStoresList);
         });
     },
-    filterStoresWithSearch:function(){
-        const inputValue = document.querySelector('search-input');
+    filterStoresWithCurrentLocation:function(){
+        $('.nearest-store-btn').on('click', function (e) {
+            locationFinder.loadMap();
+            // $(".data-map").empty();
+            // $(".data-map").append('<div id="map"></div>');
+            // var map = L.map('map').locate({setView: true, maxZoom: 16});
+            // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            //     maxZoom: 19,
+            //     attribution: '© OpenStreetMap'
+            // }).addTo(map);
+            // function onLocationFound(e) {
+            //     console.log(e.latlng);
+            //     console.log(e.latlng.lat, e.latlng.lng);
+            //     locationFinder.loadMap(e.latlng.lat, e.latlng.lng);
+            // }
+            
+            // map.on('locationfound', onLocationFound);
+            // console.log(map);
+        });
+    },
+    filterStoreWithSearch:function(){
         $('.search-input').on('input',function(e){
-            let inputValue = $(this).val();
+            let inputValue = $(this).val().toLowerCase();
+            if(inputValue.length > 0){
+                $('.clear-btn').show();
+            } else{
+                $('.clear-btn').hide();
+            }
             if(inputValue.length > 2){
                 filteredStoresList = apiData.filter((a)=> a.category.toLowerCase().includes(inputValue) || a.name.toLowerCase().includes(inputValue) || a.company.address.toLowerCase().includes(inputValue));
                 console.log(inputValue.length);
                 console.log(filteredStoresList);
                 $(".data-search-result").empty();
                 for (let store of filteredStoresList) {
-                    $(".data-search-result").append('<div class="data-search-result__item">' + store.name + '</div>');
+                    $(".data-search-result").append('<div class="data-search-result__item" id="' + store.id + '"><div class="store-name">' + store.name + '<span class="store-category">' + store.category + '</span></div><div class="store-address">' + store.company.address + '</div></div>');
                 }
             } else{
                 $(".data-search-result").empty();
             }
-            
         });
+        $(document).on('click', ".data-search-result__item", function(){
+            let storeId = this.id;
+            let selectedStore = apiData.filter((a)=> a.id == storeId);
+            locationFinder.loadMap(selectedStore[0].location.lat, selectedStore[0].location.long, null, selectedStore);
+            $(".data-search-result").empty();
+            $('.search-input').val('');
+            $('.clear-btn').hide();
+       });
+       $(document).on('click', ".clear-btn", function(){
+        $(".data-search-result").empty();
+        $('.search-input').val('');
+        $(this).hide();
+       });
+
     },
     loadStoreMap:function(){
         $(document).on('click', ".store", function(){
@@ -115,7 +172,8 @@ var locationFinder = {
         this.loadData(apiData);
         this.loadStoreMap();
         this.filterStoresWithCategory();
-        this.filterStoresWithSearch();
+        this.filterStoreWithSearch();
+        this.filterStoresWithCurrentLocation();
     }
 }
 
