@@ -1,11 +1,14 @@
 .store{
-    width: 100%;
+    width: auto;
     height: auto;
+    margin: rem(5) rem(10);
+    min-height: rem(100);
     padding: rem(10);
     cursor: pointer;
     cursor: pointer;
+    border: rem(1) solid $border-color;
   &:hover{
-    background:$hover-grey;
+    background:$border-color;
   }
     &-image{
         width: rem(100);
@@ -20,5 +23,6 @@
         width: auto;
         height: auto;
         margin-left: rem(115);
+        color: $primary-color;
     }
 }

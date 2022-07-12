@@ -24,13 +24,28 @@
 </header>
 <div class="location-finder">
   <div class="location-finder__header">
-    <div class="data-categories">
-      <!-- <div class="data-categories__item active">grocery</div> -->
-    </div>
+    <div class="header-item data-search">
+      <div class="input-group">
+        <input type="text" class="search-input form-control" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+        <span class="input-group-text clear-btn" id="basic-addon1"><i class="fas fa-times-circle"></i></span>
+      </div>
+      <div class="data-search-result">
+        <!--<div class="data-search-result__item"></div>-->
+      </div>
+   </div>
+   <div class="header-item data-categories">
+  
+  </div>
+  <div class="header-item nearest-store-finder">
+    <button class="btn btn-primary nearest-store-btn"><i class="fas fa-map-marker-alt"></i> Find Store near my location</button>
+  </div>
   </div>
   <div class="location-finder__content">
     <div class="data">
       <div class="data-list">
+        <div class="message">
+          <p>No stores found, please try another search</p>
+        </div>
         <!-- store item markup 
         <div class="data-list__item"><div class="store"><div class="store-image"><img src="assets/img/store/store.jpg"></div><div class="store-details"><div class="store-details__name"><h3>name</h3></div><div class="store-details__address"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non repudiandae animi,</p></div></div></div><div class="clear"></div></div>-->
 
@@ -48,6 +63,22 @@
 <footer>
   <p>&copy 2hats</p>
 </footer>
+
+<div id='ui'>
+  <button id='locate'>
+      Find my location
+  </button>
+  <button id='find-nearest'>
+      Find Nearest Stations
+  </button>
+</div>
+
+<div id="loader-wrapper">
+  <div id="loader"></div>
+  <div class="loader-section section-left"></div>
+  <div class="loader-section section-right"></div>
+  <p id='status'>loading vehicle recharging station data</p>
+</div>
 
 <script src='assets/js/jquery.min.js'></script>
 <script src='assets/js/app.min.js'></script>

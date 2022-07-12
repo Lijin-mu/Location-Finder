@@ -1,26 +1,18 @@
 .btn {
-  outline: none;
-  border-radius: rem(5);
-  font-size: rem(16);
-  line-height: rem(19);
-  font-weight: 700;
-  box-shadow: none;
-  margin-top: rem(10);
-  text-transform: uppercase;
-
   &:focus,
   &:active,
   &.active {
     box-shadow: none;
     outline: none;
   }
-  &.primary-btn {
-    float: right;
-    padding: rem(5) rem(22);
-    background: $white-color;
-    color: $primary-color;
-    @include tablet-lg(){
-      padding: rem(8) rem(16);
+  &.btn-primary{
+    color: $white-color;
+    background: $primary-color;
+    border-color: $primary-color;
+    &:focus,
+    &:active,
+    &:hover {
+      border-color: $primary-color;
     }
   } 
 }

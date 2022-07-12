@@ -1,0 +1,54 @@
+.data-search{
+    position: relative;
+    .input-group{
+        .input-group-text{
+            position: absolute;
+            right: 0;
+            top: rem(1);
+            z-index: 100;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .clear-btn{
+            display: none;
+        }
+    }
+    &-result{
+        position: absolute;
+        width: 100%;
+        background: #fff;
+        z-index: 1000;
+        margin: 0;
+        padding: 0;
+        max-height: 300px;
+        overflow-y: scroll;
+        @include hideScroll;
+        cursor: pointer;
+        &__item{
+            width: 100%;
+            height: auto;
+            padding: rem(5);
+            border-bottom: rem(1) solid $border-color;
+            &:hover,
+            &:active{
+                background: $hover-grey;
+            }
+            .store-name{
+                font-weight: bold;
+            }
+            .store-category {
+                background: $primary-color;
+                margin-left: rem(5);
+                padding: rem(4) rem(8);
+                border-radius: rem(10);
+                font-size: rem(12);
+                color: $white-color;
+            }
+            .store-address{
+                font-size: rem(14);
+            }
+        }
+    }
+
+}

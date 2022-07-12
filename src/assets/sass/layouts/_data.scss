@@ -5,6 +5,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     min-height: 80vh;
+    margin: rem(5) 0;
     &-list{
         max-width: 25%;
         width: 25%;
@@ -12,8 +13,9 @@
         align-self: normal;
         max-height: 80vh;
         overflow: scroll;
+        @include hideScroll();
         &__item{
-            border-bottom: rem(1) solid $light-grey;
+            border-bottom: transparent;
         }
     }
     &-map{

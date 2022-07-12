@@ -1,0 +1,51 @@
+.store-popup{
+    width: 100%;
+    height: auto;
+    padding: rem(10);
+    cursor: pointer;
+    cursor: pointer;
+    &-image{
+        width: rem(100);
+        height: auto;
+        float: left;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &-details{
+        width: auto;
+        height: auto;
+        margin-left: rem(115);
+        &__name{
+            h3 span{
+                font-size: rem(14);
+        margin-left: 10px;
+        padding: 3px 5px;
+        color: $white-color;
+        background: $primary-color;
+            }
+        }
+        p{
+            margin: 0;
+        }
+        a{
+            color: $primary-color;
+            &:hover{
+                color: darken($color: $primary-color, $amount: 15);
+            }
+        }
+        &__phone{
+            margin-top: rem(5);
+            i{
+                padding-right: rem(5);
+            }
+        }
+        &__mail{
+            margin-top: rem(5);
+            i{
+                padding-right: rem(5);
+            }
+        }
+    }
+}
