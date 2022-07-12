@@ -16,8 +16,9 @@
 @import "./layouts/location-finder";
 @import "./layouts/data";
 
-
 // Components
+@import "./components/_forms.scss"; 
+@import "./components/_buttons.scss"; 
 @import "./components/data-categories"; 
 @import "components/map";
 @import "./components/store";

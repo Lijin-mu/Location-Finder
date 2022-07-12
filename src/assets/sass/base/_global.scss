@@ -44,7 +44,7 @@ h4,
 .h2,
 .h3,
 .h4 { 
-  color: $primary-color;
+  color: $black-color;
   font-weight: 700;
 }
 
@@ -152,6 +152,9 @@ a {
 .awesome-icon {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+}
+.leaflet-popup-content{
+  min-width: rem(400);
 }
 ul {
   list-style: none;

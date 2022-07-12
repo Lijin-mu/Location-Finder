@@ -43,71 +43,111 @@ var locationFinder = {
         $(".data-map").empty();
         $(".data-map").append('<div id="map"></div>');
         if(!lat && !long){
+
             var map = L.map('map').locate({setView: true, maxZoom: 8});
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: '© OpenStreetMap'
             }).addTo(map);
+            if (!navigator.geolocation){
+                alert("<p>Sorry, your browser does not support Geolocation</p>");
+                return;
+            }
+            var zoomLevel = 4,
+            mapCenter = [38, -101];
+        
+        var options = {
+            center: mapCenter,
+            zoom: zoomLevel
+        };
+        var latlng1 = L.latLng(50.5, 30.5);
+        var latlng2 = L.latLng(30.5, 24.5);
+
+        var distance1 = L.latLng(50.5, 30.5).distanceTo(L.latLng(30.5, 24.5))/1000;
+        console.log(distance1, "distance1");
+
+            navigator.geolocation.getCurrentPosition(success, error);
+            function success(position) {
+                
+                var currentPos = [position.coords.latitude,position.coords.longitude];
+
+                map.setView(currentPos, zoomLevel);
+        
+                var myLocation = L.marker(currentPos)
+                                    .addTo(map)
+                                    .bindTooltip("you are here")
+                                    .openTooltip();
+                        
+              
+        
+            };
+        
+            function error() {
+                alert("Unable to retrieve your location");
+            };
+
+
             let currentLocation = [];
             kmArray = [];
-            let clat, clog;
+            let LocationArray = [];
+
             function onLocationFound(e) {
-                currentLocation.lat = e.latlng.lat;
-                currentLocation.long = e.latlng.lng;
-                clat= e.latlng.lat;
-                clog= e.latlng.lng;
-                console.log(clat, 2);
-                let min = 10000;
-                let finalplace = '';
+                currentlat = e.latlng.lat;
+                currentLocationlng = e.latlng.lng;
+
+                currentLocation = {currentlat,currentLocationlng}
+
+                var distances = [];
+                var nearestStore =[];
+                var NearestFinal = [];
+
                 for (let store of apiData) {
                     let lat = store.location.lat;
                     let long = store.location.long;
-                  
-                    let diff = difference(clog, store.location.long);
-                    if(diff < min){
-                        min = diff;
-                        finalLat = store.id;
-                    }
-                    LocationArray.push({lat, long});
-                    console.log(finalLat);
-                    // R = 6371 
-                    // x = (long - clog) * Math.cos( 0.5*(lat+clat) )
-                    // y = lat - clat
-                    // d = R * Math.sqrt( x*x + y*y );
-                    // if(d<min){
-                    //     min = d;
-                    //     finalplace = store.company.address;
-                    //     finalId = store.id;
-                    // }
-                    
-                    // let addr = store.company.address;
-                    // let distData = {addr, d};
-                    // kmArray.push(distData);
+                    let storeId =store.id;
 
+
+                    var distance = L.latLng(currentlat, currentLocationlng).distanceTo(L.latLng(lat, long))/1000;
+                
+                            distances.push(distance);
+                            kmArray.push ({distance, storeId});
+                            console.log(distance + "distance");
+                  
+                    LocationArray.push({lat, long});
                    
                 }
-                // console.log(kmArray);
-                // console.log(finalplace, finalId);
-                nearestStore = apiData.filter((a)=> a.id == finalLat);
-                console.log(nearestStore);
-                L.marker([nearestStore[0].location.lat, nearestStore[0].location.long]).addTo(map);
-                var latlng = L.latLng(nearestStore[0].location.lat, nearestStore[0].location.long);
-                var popup = L.popup()
+
+                     distances.sort(function(a, b) {
+                            return a - b;
+                        });
+
+
+
+                 nearestStore = kmArray.filter((a)=> a.distance == distances[0]);
+
+                 NearestFinal = apiData.filter((a)=> a.id == nearestStore[0].storeId);
+                 var nearestDistance = distances[0];
+                 nearestDistance = nearestDistance.toFixed(2);
+
+                 nearestStoreLat = NearestFinal[0].location.lat;
+                 nearestStorelong = NearestFinal[0].location.long;
+
+                 var latlng = L.latLng(nearestStoreLat, nearestStorelong);
+                 L.marker([nearestStoreLat, nearestStorelong]).addTo(map);
+                 var popup = L.popup()
                 .setLatLng(latlng)
-                .setContent('<div class="store-popup" id="' + nearestStore[0].id + '"><div class="store-popup-image"><img src="' + nearestStore[0].company.image + '"></div><div class="store-popup-details"><div class="store-popup-details__name"><h3>' + nearestStore[0].name + '</h3></div><div class="store-popup-details__address"><p>' + nearestStore[0].company.address + '</p></div></div></div><div class="clear"></div>')
+                .setContent('<div class="store-popup" id="' + NearestFinal[0].id + '"><div class="store-popup-image"><img src="' + NearestFinal[0].company.image + '"></div><div class="store-popup-details"><div class="store-popup-details__name"><h3>' + NearestFinal[0].name + '<span>' + nearestDistance + ' km </span></h3></div><div class="store-popup-details__address"><p>' + NearestFinal[0].company.address + '</p></div><div class="store-popup-details__phone"><a href="tel:' + NearestFinal[0].company.phone + '"><i class="fas fa-phone"></i><span>' + NearestFinal[0].company.phone + '</span></a></div><div class="store-popup-details__mail"><a href="mailto:' + NearestFinal[0].company.email + '"><i class="fas fa-envelope"></i><span>' + NearestFinal[0].company.email + '</span></a></div></div></div><div class="clear"></div>')
                 .openOn(map);
+
+                 var latlngs = [
+                    [currentlat, currentLocationlng],
+                    [nearestStoreLat, nearestStorelong]
+                ];
+                var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+                // zoom the map to the polyline
+                map.fitBounds(polyline.getBounds());
             }
             map.on('locationfound', onLocationFound);
-            let LocationArray = [];
-            function difference(a, b) {
-                return Math.abs(a - b);
-              }
-
-           
-            console.log(currentLocation);
-            console.log(LocationArray);
-            LocationArray.sort();
-            console.log(LocationArray);
            
 
         } else{
@@ -132,7 +172,7 @@ var locationFinder = {
             var latlng = L.latLng(lat, long);
             var popup = L.popup()
             .setLatLng(latlng)
-            .setContent('<div class="store-popup" id="' + marker[0].id + '"><div class="store-popup-image"><img src="' + marker[0].company.image + '"></div><div class="store-popup-details"><div class="store-popup-details__name"><h3>' + marker[0].name + '</h3></div><div class="store-popup-details__address"><p>' + marker[0].company.address + '</p></div></div></div><div class="clear"></div>')
+            .setContent('<div class="store-popup" id="' + marker[0].id + '"><div class="store-popup-image"><img src="' + marker[0].company.image + '"></div><div class="store-popup-details"><div class="store-popup-details__name"><h3>' + marker[0].name + '</h3></div><div class="store-popup-details__address"><p>' + marker[0].company.address + '</p></div><div class="store-popup-details__phone"><a href="tel:' + marker[0].company.phone + '"><i class="fas fa-phone"></i><span>' + marker[0].company.phone + '</span></a></div><div class="store-popup-details__mail"><a href="mailto:' + marker[0].company.email + '"><i class="fas fa-envelope"></i><span>' + marker[0].company.email + '</span></a></div></div></div><div class="clear"></div>')
             .openOn(map);
         } 
     },
@@ -159,21 +199,6 @@ var locationFinder = {
     filterStoresWithCurrentLocation:function(){
         $('.nearest-store-btn').on('click', function (e) {
             locationFinder.loadMap();
-            // $(".data-map").empty();
-            // $(".data-map").append('<div id="map"></div>');
-            // var map = L.map('map').locate({setView: true, maxZoom: 16});
-            // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            //     maxZoom: 19,
-            //     attribution: '© OpenStreetMap'
-            // }).addTo(map);
-            // function onLocationFound(e) {
-            //     console.log(e.latlng);
-            //     console.log(e.latlng.lat, e.latlng.lng);
-            //     locationFinder.loadMap(e.latlng.lat, e.latlng.lng);
-            // }
-            
-            // map.on('locationfound', onLocationFound);
-            // console.log(map);
         });
     },
     filterStoreWithSearch:function(){
